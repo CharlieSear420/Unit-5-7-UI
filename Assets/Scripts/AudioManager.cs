@@ -15,6 +15,8 @@ public class AudioManager : MonoBehaviour
 	// this is the list of sounds we have defined in the editor
 	public Sound[] soundList;
 
+    
+
 	void Awake()
 	{
 		if (instance == null)
@@ -57,5 +59,21 @@ public class AudioManager : MonoBehaviour
 
 		s.source.Play();
 	}
+
+    public void SetVolume(string sound, float volume)
+    {
+
+        Sound s = Array.Find(soundList, item => item.name == sound);
+
+        if (s == null)
+        {
+            Debug.LogWarning("sound" + name + "not found");
+            return; 
+        }
+
+        s.source.volume = volume;
+        s.volume = volume;
+
+    }
 
 }
