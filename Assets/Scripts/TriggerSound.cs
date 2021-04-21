@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
- using UnityEngine.EventSystems;
+using UnityEngine.EventSystems;
 
 public class TriggerSound : MonoBehaviour, ISelectHandler , IPointerEnterHandler
 {
@@ -20,13 +20,13 @@ public class TriggerSound : MonoBehaviour, ISelectHandler , IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //print("entered");
-        //AudioManager.instance.Play("beep1");
+        print("entered");
+        AudioManager.instance.Play("test_2");
     }
 
     public void OnSelect( BaseEventData eventData )
     {
-        //print("selected");
+        print("selected");
         AudioManager.instance.Play("Game Over");
     }
 }
